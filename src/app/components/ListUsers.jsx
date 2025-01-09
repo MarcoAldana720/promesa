@@ -184,7 +184,7 @@ export default function ListUsers() {
             <div className="container_add_filter">
               <Link href="/admin/usuarios?new=1">
                 <div className="container_btn_filter">
-                  <span>agregar</span>
+                  <span>Agregar</span>
                 </div>
               </Link>
             </div>
