@@ -85,7 +85,7 @@ export default function ListLine() {
           </>
         ) : (
           <div className="search_not_exit_filter">
-            <p>Presione agregar para agregar una nueva línea.</p>
+            <p>Presione agregar, para agregar una nueva línea.</p>
             <br />
             <div className="container_add_filter">
               <Link href="/client/line?new=1">

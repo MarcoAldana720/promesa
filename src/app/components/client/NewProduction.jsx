@@ -54,6 +54,7 @@ export default function NewProduction({ show }) {
       const res = await axios.post("/api/client/academicproduction", payload);
       toast.success(res.data.message || "Datos guardados exitosamente.");
       reset();
+      setSelectedOption(""); // Reinicia el valor del select de tipo de produccion
       router.push("/client/academicproduction");
     } catch (error) {
       const errorMsg = error.response?.data.message || "Error al guardar los datos.";
@@ -63,6 +64,7 @@ export default function NewProduction({ show }) {
 
   const closeModal = () => {
     reset();
+    setSelectedOption(""); // Reinicia el valor del select de tipo de produccion
     router.replace(pathname);
   };
 
