@@ -81,7 +81,7 @@ export default function EditGeneration({ show }) {
             <br />
 
             <div className="btn">
-              <button type="submit">guardar</button>
+              <button type="submit">Guardar</button>
             </div>
           </form>
         </div>

@@ -77,7 +77,7 @@ export default function AssociateLine({ show }) {
               <br />
 
               <div className="btn">
-                <button type="submit">asociar a mi producción</button>
+                <button type="submit">Asociar a mi producción</button>
               </div>
             </form>
           </div>
