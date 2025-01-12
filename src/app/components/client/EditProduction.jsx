@@ -125,41 +125,41 @@ export default function EditProduction({ show }) {
             {selectedOption === "1" && (
               <>
                 <label htmlFor="art_autores">Autor(es) *:</label><br />
-                <input type="text" {...register("art_autores", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" className={`input-field ${errors.art_autores ? "input-error" : ""}`} {...register("art_autores", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_autores && <span className="error">{errors.art_autores.message}</span>}<br />
 
                 <label htmlFor="art_estado_actual">Estado Actual *:</label><br />
-                <input type="text" {...register("art_estado_actual", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres." }, })} />
+                <input type="text" className={`input-field ${errors.art_estado_actual ? "input-error" : ""}`} {...register("art_estado_actual", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres." }, })} />
                 {errors.art_estado_actual && <span className="error">{errors.art_estado_actual.message}</span>}<br />
 
                 <label htmlFor="art_de_la_pagina">De la página *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Rango de páginas que ocupa el artículo."><HelpIcon /></span>
                 </label><br />
-                <input type="number" name="art_de_la_pagina" id="art_de_la_pagina" {...register("art_de_la_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
+                <input type="number" name="art_de_la_pagina" id="art_de_la_pagina" className={`input-field ${errors.art_de_la_pagina ? "input-error" : ""}`} {...register("art_de_la_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
                 {errors.art_de_la_pagina && <span className="error">{errors.art_de_la_pagina.message}</span>}<br />
 
                 <label htmlFor="art_a_la_pagina">A la página *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Rango de páginas que ocupa el artículo."><HelpIcon /></span>
                 </label><br />
-                <input type="number" name="art_a_la_pagina" id="art_a_la_pagina" {...register("art_a_la_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
+                <input type="number" name="art_a_la_pagina" id="art_a_la_pagina" className={`input-field ${errors.art_a_la_pagina ? "input-error" : ""}`} {...register("art_a_la_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
                 {errors.art_a_la_pagina && <span className="error">{errors.art_a_la_pagina.message}</span>}<br />
 
                 <label htmlFor="art_pais">País *:</label><br />
-                <input type="text" name="art_pais" id="art_pais" {...register("art_pais", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
+                <input type="text" name="art_pais" id="art_pais" className={`input-field ${errors.art_pais ? "input-error" : ""}`} {...register("art_pais", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
                 {errors.art_pais && <span className="error">{errors.art_pais.message}</span>}<br />
 
                 <label htmlFor="art_volumen">Volumen *:</label><br />
-                <input type="number" name="art_volumen" id="art_volumen" {...register("art_volumen", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres." }, })} />
+                <input type="number" name="art_volumen" id="art_volumen" className={`input-field ${errors.art_volumen ? "input-error" : ""}`} {...register("art_volumen", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres." }, })} />
                 {errors.art_volumen && <span className="error">{errors.art_volumen.message}</span>}<br />
 
                 <label htmlFor="art_fecha_publicacion">Fecha de publicación *:</label><br />
-                <input type="date" name="art_fecha_publicacion" id="art_fecha_publicacion" {...register("art_fecha_publicacion", { required: "Este campo es obligatorio." })} />
+                <input type="date" name="art_fecha_publicacion" id="art_fecha_publicacion" className={`input-field ${errors.art_fecha_publicacion ? "input-error" : ""}`} {...register("art_fecha_publicacion", { required: "Este campo es obligatorio." })} />
                 {errors.art_fecha_publicacion && <span className="error">{errors.art_fecha_publicacion.message}</span>}<br />
 
                 <label htmlFor="art_tipo_articulo">Tipo de artículo *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Clasificación del articulo."><HelpIcon /></span>
                 </label><br />
-                <select name="art_tipo_articulo" id="art_tipo_articulo" {...register("art_tipo_articulo", { required: "Este campo es obligatorio." })} >
+                <select name="art_tipo_articulo" id="art_tipo_articulo" className={`input-field ${errors.art_tipo_articulo ? "input-error" : ""}`} {...register("art_tipo_articulo", { required: "Este campo es obligatorio." })} >
                   <option value="">Selecciona una opción</option>
                   <option value="Artículo de difusión y divulgación">Articulo de difusion y divulgacion</option>
                   <option value="Artículo de arbitrado">Artículo de arbitrado</option>
@@ -168,27 +168,27 @@ export default function EditProduction({ show }) {
                 {errors.art_tipo_articulo && <span className="error">{errors.art_tipo_articulo.message}</span>}<br />
 
                 <label htmlFor="art_titulo_articulo">Título del artículo *:</label><br />
-                <input type="text" name="art_titulo_articulo" id="art_titulo_articulo" {...register("art_titulo_articulo", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" name="art_titulo_articulo" id="art_titulo_articulo" className={`input-field ${errors.art_titulo_articulo ? "input-error" : ""}`} {...register("art_titulo_articulo", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_titulo_articulo && <span className="error">{errors.art_titulo_articulo.message}</span>}<br />
 
                 <label htmlFor="art_nombre_revista">Nombre de la revista *:</label><br />
-                <input type="text" name="art_nombre_revista" id="art_nombre_revista" {...register("art_nombre_revista", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" name="art_nombre_revista" id="art_nombre_revista" className={`input-field ${errors.art_nombre_revista ? "input-error" : ""}`} {...register("art_nombre_revista", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_nombre_revista && <span className="error">{errors.art_nombre_revista.message}</span>}<br />
 
                 <label htmlFor="art_editorial">Editorial *:</label><br />
-                <input type="text" name="art_editorial" id="art_editorial" {...register("art_editorial", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" name="art_editorial" id="art_editorial" className={`input-field ${errors.art_editorial ? "input-error" : ""}`} {...register("art_editorial", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_editorial && <span className="error">{errors.art_editorial.message}</span>}<br />
 
                 <label htmlFor="art_issn">ISSN *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Código que identifica publicaciones seriadas."><HelpIcon /></span>
                 </label><br />
-                <input type="text" name="art_issn" id="art_issn" {...register("art_issn", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" name="art_issn" id="art_issn" className={`input-field ${errors.art_issn ? "input-error" : ""}`} {...register("art_issn", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_issn && <span className="error">{errors.art_issn.message}</span>}<br />
 
                 <label htmlFor="art_direccion_electronica">Dirección electrónica del artículo:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Enlace electrónico para consultar el artículo."><HelpIcon /></span>
                 </label><br />
-                <input type="text" name="art_direccion_electronica" id="art_direccion_electronica" {...register("art_direccion_electronica", { maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" name="art_direccion_electronica" id="art_direccion_electronica" className={`input-field ${errors.art_direccion_electronica ? "input-error" : ""}`} {...register("art_direccion_electronica", { maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.art_direccion_electronica && <span className="error">{errors.art_direccion_electronica.message}</span>}<br />
               </>
             )}
@@ -196,11 +196,11 @@ export default function EditProduction({ show }) {
             {selectedOption === "2" && (
               <>
                 <label htmlFor="lib_autores">Autor(es) del Libro *:</label><br />
-                <input type="text" {...register("lib_autores", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })} />
+                <input type="text" className={`input-field ${errors.lib_autores ? "input-error" : ""}`} {...register("lib_autores", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })} />
                 {errors.lib_autores && <span className="error">{errors.lib_autores.message}</span>}<br />
 
                 <label htmlFor="lib_estado_actual">Estado Actual del Libro *:</label><br />
-                <select {...register("lib_estado_actual", { required: "Este campo es obligatorio." })} >
+                <select className={`input-field ${errors.lib_estado_actual ? "input-error" : ""}`} {...register("lib_estado_actual", { required: "Este campo es obligatorio." })} >
                   <option value="">Selecciona una opción</option>
                   <option value="Aceptado">Aceptado</option>
                   <option value="Publicado">Publicado</option>
@@ -210,29 +210,29 @@ export default function EditProduction({ show }) {
                 <label htmlFor="lib_pagina">Páginas *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Número total de páginas del libro."><HelpIcon /></span>
                 </label><br />
-                <input type="number" id="lib_pagina" {...register("lib_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
+                <input type="number" id="lib_pagina" className={`input-field ${errors.lib_pagina ? "input-error" : ""}`} {...register("lib_pagina", { required: "Este campo es obligatorio.", maxLength: { value: 3, message: "El campo solo admite 3 caracteres." }, })} />
                 {errors.lib_pagina && <span className="error">{errors.lib_pagina.message}</span>}<br />
 
                 <label htmlFor="lib_pais">País *:</label><br />
-                <input type="text" id="lib_pais" {...register("lib_pais", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
+                <input type="text" id="lib_pais" className={`input-field ${errors.lib_pais ? "input-error" : ""}`} {...register("lib_pais", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
                 {errors.lib_pais && <span className="error">{errors.lib_pais.message}</span>}<br />
 
                 <label htmlFor="lib_edicion">Edición *:</label><br />
-                <input type="number" id="lib_edicion" {...register("lib_edicion", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
+                <input type="number" id="lib_edicion" className={`input-field ${errors.lib_edicion ? "input-error" : ""}`} {...register("lib_edicion", { required: "Este campo es obligatorio.", maxLength: { value: 20, message: "El campo solo admite 20 caracteres." }, })} />
                 {errors.lib_edicion && <span className="error">{errors.lib_edicion.message}</span>}<br />
 
                 <label htmlFor="lib_isbn">ISBN:</label><br />
-                <input type="text" id="lib_isbn" {...register("lib_isbn", { maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" id="lib_isbn" className={`input-field ${errors.lib_isbn ? "input-error" : ""}`} {...register("lib_isbn", { maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.lib_isbn && <span className="error">{errors.lib_isbn.message}</span>}<br />
 
                 <label htmlFor="lib_titulo_libro">Título de libro *:</label><br />
-                <input type="text" id="lib_titulo_libro" {...register("lib_titulo_libro", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" id="lib_titulo_libro" className={`input-field ${errors.lib_titulo_libro ? "input-error" : ""}`} {...register("lib_titulo_libro", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.lib_titulo_libro && <span className="error">{errors.lib_titulo_libro.message}</span>}<br />
 
                 <label htmlFor="lib_tipo_libro">Tipo de libro *:
                   <span className="tooltip-icon highlight-icon" data-tooltip="Clasificación del libro."><HelpIcon /></span>
                 </label><br />
-                <select id="lib_tipo_libro" {...register("lib_tipo_libro", { required: "Este campo es obligatorio." })} >
+                <select id="lib_tipo_libro" className={`input-field ${errors.lib_tipo_libro ? "input-error" : ""}`} {...register("lib_tipo_libro", { required: "Este campo es obligatorio." })} >
                   <option value="">Selecciona una opción</option>
                   <option value="Capítulo de libro">Capítulo de libro</option>
                   <option value="Libro">Libro</option>
@@ -240,15 +240,15 @@ export default function EditProduction({ show }) {
                 {errors.lib_tipo_libro && <span className="error">{errors.lib_tipo_libro.message}</span>}<br />
 
                 <label htmlFor="lib_editorial">Editorial *:</label><br />
-                <input type="text" id="lib_editorial" {...register("lib_editorial", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="text" id="lib_editorial" className={`input-field ${errors.lib_editorial ? "input-error" : ""}`} {...register("lib_editorial", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.lib_editorial && <span className="error">{errors.lib_editorial.message}</span>}<br />
 
                 <label htmlFor="lib_tiraje">Tiraje *:</label><br />
-                <input type="number" id="lib_tiraje" {...register("lib_tiraje", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+                <input type="number" id="lib_tiraje" className={`input-field ${errors.lib_tiraje ? "input-error" : ""}`} {...register("lib_tiraje", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
                 {errors.lib_tiraje && <span className="error">{errors.lib_tiraje.message}</span>}<br />
 
                 <label htmlFor="lib_fecha_publicacion">Fecha de publicación *:</label><br />
-                <input type="date" id="lib_fecha_publicacion" {...register("lib_fecha_publicacion", { required: "Este campo es obligatorio." })} />
+                <input type="date" id="lib_fecha_publicacion" className={`input-field ${errors.lib_fecha_publicacion ? "input-error" : ""}`} {...register("lib_fecha_publicacion", { required: "Este campo es obligatorio." })} />
                 {errors.lib_fecha_publicacion && <span className="error">{errors.lib_fecha_publicacion.message}</span>}<br />
               </>
             )}

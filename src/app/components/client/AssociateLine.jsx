@@ -72,7 +72,7 @@ export default function AssociateLine({ show }) {
                   <HelpIcon />
                 </span>
               </label>
-              <input type="text" name="lg_actividad_realiza" id="lg_actividad_realiza" {...register("lg_actividad_realiza", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
+              <input type="text" name="lg_actividad_realiza" id="lg_actividad_realiza" className={`input-field ${errors.lg_actividad_realiza ? "input-error" : ""}`} {...register("lg_actividad_realiza", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." }, })} />
               {errors.lg_actividad_realiza && <span className="error">{errors.lg_actividad_realiza.message}</span> }
               <br />
 

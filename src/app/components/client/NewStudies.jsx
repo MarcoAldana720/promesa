@@ -49,7 +49,7 @@ export default function NewStudies({ show }) {
               <span className="tooltip-icon highlight-icon" data-tooltip="Nivel académico alcanzado."><HelpIcon /></span>
             </label>
             <br />
-            <select id="us_nivel" {...register('us_nivel', { required: 'Este campo es obligatorio.' })}>
+            <select id="us_nivel" className={`input-field ${errors.us_nivel ? "input-error" : ""}`} {...register('us_nivel', { required: 'Este campo es obligatorio.' })}>
               <option value="">Selecciona una opción</option>
               <option value="Doctorado">Doctorado</option>
               <option value="Maestria">Maestría</option>
@@ -62,7 +62,7 @@ export default function NewStudies({ show }) {
               <span className="tooltip-icon highlight-icon" data-tooltip="Campo de estudio o disciplina principal."><HelpIcon /></span>
             </label>
             <br />
-            <select id="us_area" {...register('us_area', { required: 'Este campo es obligatorio.' })}>
+            <select id="us_area" className={`input-field ${errors.us_area ? "input-error" : ""}`} {...register('us_area', { required: 'Este campo es obligatorio.' })}>
               <option value="">Selecciona una opción</option>
               <option value="Físico-matemáticas y ciencias de la tierra">I. Físico-matemáticas y ciencias de la tierra</option>
               <option value="Biología y química">II. Biología y química</option>
@@ -79,7 +79,7 @@ export default function NewStudies({ show }) {
 
             <label htmlFor="us_disciplina">Disciplina *:</label>
             <br />
-            <input type="text" id="us_disciplina" {...register('us_disciplina', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
+            <input type="text" id="us_disciplina" className={`input-field ${errors.us_disciplina ? "input-error" : ""}`} {...register('us_disciplina', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
             {errors.us_disciplina && <span className="error">{errors.us_disciplina.message}</span>}
             <br />
 
@@ -87,19 +87,19 @@ export default function NewStudies({ show }) {
               <span className="tooltip-icon highlight-icon" data-tooltip="Fecha en que se emitió el título o grado."><HelpIcon /></span>
             </label>
             <br />
-            <input type="date" id="us_fecha" {...register('us_fecha', { required: 'Este campo es obligatorio.' })} />
+            <input type="date" id="us_fecha" className={`input-field ${errors.us_fecha ? "input-error" : ""}`} {...register('us_fecha', { required: 'Este campo es obligatorio.' })} />
             {errors.us_fecha && <span className="error">{errors.us_fecha.message}</span>}
             <br />
 
             <label htmlFor="us_institucion">Institución otorgante:</label>
             <br />
-            <input type="text" id="us_institucion" {...register('us_institucion', { maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
+            <input type="text" id="us_institucion" className={`input-field ${errors.us_institucion ? "input-error" : ""}`} {...register('us_institucion', { maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
             {errors.us_institucion && <span className="error">{errors.us_institucion.message}</span>}
             <br />
 
             <label htmlFor="us_pais">País *:</label>
             <br />
-            <input type="text" id="us_pais" {...register('us_pais', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
+            <input type="text" id="us_pais" className={`input-field ${errors.us_pais ? "input-error" : ""}`} {...register('us_pais', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
             {errors.us_pais && <span className="error">{errors.us_pais.message}</span>}
             <br />
 

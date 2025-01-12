@@ -41,14 +41,14 @@ export default function NewData({ show }) {
             <label htmlFor="da_nombramiento">Nombramiento *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Tipo de contrato o cargo asignado."><HelpIcon /></span>
             </label><br />
-            <input type="text" id="da_nombramiento" name="da_nombramiento" {...register("da_nombramiento", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres.", }, })} />
+            <input type="text" id="da_nombramiento" name="da_nombramiento" className={`input-field ${errors.da_nombramiento ? "input-error" : ""}`} {...register("da_nombramiento", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres.", }, })} />
             {errors.da_nombramiento && <span className="error">{errors.da_nombramiento.message}</span>}
             <br />
 
             <label htmlFor="da_escuela_pertenece">Escuela a la que pertenece *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Nombre de la escuela o facultad donde labora."><HelpIcon /></span>
             </label><br />
-            <select id="da_escuela_pertenece" name="da_escuela_pertenece" {...register("da_escuela_pertenece", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })}>
+            <select id="da_escuela_pertenece" name="da_escuela_pertenece" className={`input-field ${errors.da_escuela_pertenece ? "input-error" : ""}`} {...register("da_escuela_pertenece", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })}>
               <option value="">Selecciona una opción</option>
               <option value="Arquitectura">Arquitectura</option>
               <option value="Derecho">Derecho</option>
@@ -64,21 +64,21 @@ export default function NewData({ show }) {
             <label htmlFor="da_inicio_contrato">Inicio de contrato *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Fecha de inicio del contrato laboral."><HelpIcon /></span>
             </label><br />
-            <input type="date" id="da_inicio_contrato" name="da_inicio_contrato" {...register("da_inicio_contrato", { required: "Este campo es obligatorio." })} />
+            <input type="date" id="da_inicio_contrato" name="da_inicio_contrato" className={`input-field ${errors.da_inicio_contrato ? "input-error" : ""}`} {...register("da_inicio_contrato", { required: "Este campo es obligatorio." })} />
             {errors.da_inicio_contrato && <span className="error">{errors.da_inicio_contrato.message}</span>}
             <br />
 
             <label htmlFor="da_hrs_contrato">Horas de contrato *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Cantidad de horas."><HelpIcon /></span>
             </label><br />
-            <input type="number" id="da_hrs_contrato" name="da_hrs_contrato" {...register("da_hrs_contrato", { required: "Este campo es obligatorio.", maxLength: { value: 2, message: "El campo solo admite 2 digitos.", }, })} />
+            <input type="number" id="da_hrs_contrato" name="da_hrs_contrato" className={`input-field ${errors.da_hrs_contrato ? "input-error" : ""}`} {...register("da_hrs_contrato", { required: "Este campo es obligatorio.", maxLength: { value: 2, message: "El campo solo admite 2 digitos.", }, })} />
             {errors.da_hrs_contrato && <span className="error">{errors.da_hrs_contrato.message}</span>}
             <br />
 
             <label htmlFor="da_unidad">Unidad académica de adscripción *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Departamento o unidad académica donde está adscrito."><HelpIcon /></span>
             </label><br />
-            <select id="da_unidad" name="da_unidad" {...register("da_unidad", { required: "Este campo es obligatorio." })} >
+            <select id="da_unidad" name="da_unidad" className={`input-field ${errors.da_unidad ? "input-error" : ""}`} {...register("da_unidad", { required: "Este campo es obligatorio." })} >
               <option value="">Selecciona una opción</option>
               <option value="Ingeniería arquitectónica">Ingeniería arquitectónica</option>
               <option value="Derecho">Derecho</option>
@@ -111,7 +111,7 @@ export default function NewData({ show }) {
             <label htmlFor="da_campus">Campus:
               <span className="tooltip-icon highlight-icon" data-tooltip="Ubicación específica del campus."><HelpIcon /></span>
             </label><br />
-            <select id="da_campus" name="da_campus" {...register("da_campus", { maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} >
+            <select id="da_campus" name="da_campus" className={`input-field ${errors.da_campus ? "input-error" : ""}`} {...register("da_campus", { maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} >
               <option value="">Selecciona una opción</option>
               <option value="Mérida">Mérida</option>
               <option value="Valladolid">Valladolid</option>

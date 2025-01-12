@@ -83,7 +83,7 @@ export default function EditStudies({ show }) {
             <label htmlFor="est_nivel_estudios">Nivel de estudios *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Nivel académico alcanzado."><HelpIcon /></span>
             </label><br />
-            <select id="est_nivel_estudios" {...register('est_nivel_estudios', { required: 'Este campo es obligatorio.' })}>
+            <select id="est_nivel_estudios" className={`input-field ${errors.est_nivel_estudios ? "input-error" : ""}`} {...register('est_nivel_estudios', { required: 'Este campo es obligatorio.' })}>
               <option value="">Selecciona una opción</option>
               <option value="Doctorado">Doctorado</option>
               <option value="Maestria">Maestría</option>
@@ -95,7 +95,7 @@ export default function EditStudies({ show }) {
             <label htmlFor="est_area_estudio">Área *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Campo de estudio o disciplina principal."><HelpIcon /></span>
             </label><br />
-            <select id="est_area_estudio" {...register('est_area_estudio', { required: 'Este campo es obligatorio.' })}>
+            <select id="est_area_estudio" className={`input-field ${errors.est_area_estudio ? "input-error" : ""}`} {...register('est_area_estudio', { required: 'Este campo es obligatorio.' })}>
               <option value="">Selecciona una opción</option>
               <option value="Físico-matemáticas y ciencias de la tierra">I. Físico-matemáticas y ciencias de la tierra</option>
               <option value="Biología y química">II. Biología y química</option>
@@ -111,24 +111,24 @@ export default function EditStudies({ show }) {
             <br />
 
             <label htmlFor="est_disciplina_estudio">Disciplina *:</label><br />
-            <input type="text" id="est_disciplina_estudio" {...register('est_disciplina_estudio', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
+            <input type="text" id="est_disciplina_estudio" className={`input-field ${errors.est_disciplina_estudio ? "input-error" : ""}`} {...register('est_disciplina_estudio', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
             {errors.est_disciplina_estudio && <span className="error">{errors.est_disciplina_estudio.message}</span>}
             <br />
 
             <label htmlFor="est_fecha_obtencion_titulo">Fecha de obtención del título o grado *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Fecha en que se emitió el título o grado."><HelpIcon /></span>
             </label><br />
-            <input type="date" id="est_fecha_obtencion_titulo" {...register('est_fecha_obtencion_titulo', { required: 'Este campo es obligatorio.' })} />
+            <input type="date" id="est_fecha_obtencion_titulo" className={`input-field ${errors.est_fecha_obtencion_titulo ? "input-error" : ""}`} {...register('est_fecha_obtencion_titulo', { required: 'Este campo es obligatorio.' })} />
             {errors.est_fecha_obtencion_titulo && <span className="error">{errors.est_fecha_obtencion_titulo.message}</span>}
             <br />
 
             <label htmlFor="est_institucion_otorgante">Institución otorgante:</label><br />
-            <input type="text" id="est_institucion_otorgante" {...register('est_institucion_otorgante', { maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
+            <input type="text" id="est_institucion_otorgante" className={`input-field ${errors.est_institucion_otorgante ? "input-error" : ""}`} {...register('est_institucion_otorgante', { maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
             {errors.est_institucion_otorgante && <span className="error">{errors.est_institucion_otorgante.message}</span>}
             <br />
 
             <label htmlFor="est_pais_institucion">País *:</label><br />
-            <input type="text" id="est_pais_institucion" {...register('est_pais_institucion', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
+            <input type="text" id="est_pais_institucion" className={`input-field ${errors.est_pais_institucion ? "input-error" : ""}`} {...register('est_pais_institucion', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' } })} />
             {errors.est_pais_institucion && <span className="error">{errors.est_pais_institucion.message}</span>}
             <br />
 

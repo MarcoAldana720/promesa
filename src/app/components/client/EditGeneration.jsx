@@ -76,7 +76,7 @@ export default function EditGeneration({ show }) {
                 <HelpIcon />
               </span>
             </label><br />
-            <input type="text" id="lg_actividad_realiza" name="lg_actividad_realiza" {...register("lg_actividad_realiza", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })} />
+            <input type="text" id="lg_actividad_realiza" name="lg_actividad_realiza" className={`input-field ${errors.lg_actividad_realiza ? "input-error" : ""}`} {...register("lg_actividad_realiza", { required: "Este campo es obligatorio.", maxLength: { value: 100, message: "El campo solo admite 100 caracteres." } })} />
             {errors.lg_actividad_realiza && <span className="error">{errors.lg_actividad_realiza.message}</span>}
             <br />
 

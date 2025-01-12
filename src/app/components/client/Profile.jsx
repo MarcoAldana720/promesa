@@ -85,28 +85,28 @@ export default function Profile({ show, userData }) {
         <div className="form">
           <form onSubmit={handleSubmit(onSubmit)} method="post">
             <label htmlFor="us_nombres">Nombre(s) *:</label><br />
-            <input type="text" id="us_nombres" {...register("us_nombres", { required: "Este campo es obligatorio." })} />
+            <input type="text" id="us_nombres" className={`input-field ${errors.us_nombres ? "input-error" : ""}`} {...register("us_nombres", { required: "Este campo es obligatorio." })} />
             {errors.us_nombres && <span className="error">{errors.us_nombres.message}</span>}
             <br />
 
             <label htmlFor="us_apellido_paterno">Apellido paterno *:</label><br />
-            <input type="text" id="us_apellido_paterno" {...register("us_apellido_paterno", { required: "Este campo es obligatorio." })} />
+            <input type="text" id="us_apellido_paterno" className={`input-field ${errors.us_apellido_paterno ? "input-error" : ""}`} {...register("us_apellido_paterno", { required: "Este campo es obligatorio." })} />
             {errors.us_apellido_paterno && <span className="error">{errors.us_apellido_paterno.message}</span>}
             <br />
 
             <label htmlFor="us_apellido_materno">Apellido materno *:</label><br />
-            <input type="text" id="us_apellido_materno" {...register("us_apellido_materno", { required: "Este campo es obligatorio." })} />
+            <input type="text" id="us_apellido_materno" className={`input-field ${errors.us_apellido_materno ? "input-error" : ""}`} {...register("us_apellido_materno", { required: "Este campo es obligatorio." })} />
             {errors.us_apellido_materno && <span className="error">{errors.us_apellido_materno.message}</span>}
             <br />
 
             <label htmlFor="us_usuario">Usuario *:</label><br />
-            <input type="text" id="us_usuario" {...register("us_usuario", { required: "Este campo es obligatorio." })} />
+            <input type="text" id="us_usuario" className={`input-field ${errors.us_usuario ? "input-error" : ""}`} {...register("us_usuario", { required: "Este campo es obligatorio." })} />
             {errors.us_usuario && <span className="error">{errors.us_usuario.message}</span>}
             <br />
 
             <label htmlFor="us_contrasena">Contraseña:</label><br />
             <div className="relative_profile">
-              <input type={showPassword ? "text" : "password"} id="us_contrasena" {...register("us_contrasena", { maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} />
+              <input type={showPassword ? "text" : "password"} id="us_contrasena" className={`input-field ${errors.us_contrasena ? "input-error" : ""}`} {...register("us_contrasena", { maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} />
               <span onClick={togglePasswordVisibility} className="toggle_password_profile">
                 {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
               </span>

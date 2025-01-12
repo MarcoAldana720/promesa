@@ -51,7 +51,7 @@ export default function NewLine({ show }) {
                 <HelpIcon />
               </span>
             </label><br />
-            <input type="text" id="li_linea" name="li_linea" {...register('li_linea', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.', }, })} />
+            <input type="text" id="li_linea" name="li_linea" className={`input-field ${errors.li_linea ? "input-error" : ""}`} {...register('li_linea', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.', }, })} />
             {errors.li_linea && <span className="error">{errors.li_linea.message}</span>}
             <br />
 
@@ -62,7 +62,7 @@ export default function NewLine({ show }) {
                 <HelpIcon />
               </span>
             </label><br />
-            <input type="text" id="lg_actividad_realiza" name="lg_actividad_realiza" {...register('lg_actividad_realiza', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
+            <input type="text" id="lg_actividad_realiza" name="lg_actividad_realiza" className={`input-field ${errors.lg_actividad_realiza ? "input-error" : ""}`} {...register('lg_actividad_realiza', { required: 'Este campo es obligatorio.', maxLength: { value: 100, message: 'El campo solo admite 100 caracteres.' }, })} />
             {errors.lg_actividad_realiza && <span className="error">{errors.lg_actividad_realiza.message}</span>}
             <br />
 

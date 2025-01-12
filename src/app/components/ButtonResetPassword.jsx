@@ -24,7 +24,7 @@ const ButtonResetPassword = ({ us_id }) => {
   return (
     <form onSubmit={restablecer}>
       <input type="hidden" value={us_id} name="id" />
-      <button type="submit" className="btn_reset" disabled={loading} > {loading ? "Cargando..." : "Restaurar Contraseña"} </button>
+      <button type="submit" className="btn_reset" disabled={loading} > {loading ? "Cargando..." : "Restaurar contraseña"} </button>
     </form>
   );
 };

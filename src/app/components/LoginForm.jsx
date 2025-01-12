@@ -70,7 +70,8 @@ export default function LoginForm() {
           <div className="modal-content" ref={modalRef}>
             <button onClick={closeHelpModal} className="close-modal-2" aria-label="Cerrar">
               &times;
-            </button><br />
+            </button>
+            <br />
 
             <h2>Instrucciones para activar tu cuenta y poder iniciar sesión:</h2>
             <ol>
@@ -101,7 +102,7 @@ export default function LoginForm() {
         </figure>
         <form onSubmit={handleSubmit(onSubmit)} method="post">
           <label htmlFor="us_usuario">Usuario:</label>
-          <input type="text" id="us_usuario" {...register("us_usuario", { required: "Este campo es obligatorio.", maxLength: { value: 50, message: "El campo solo admite 50 caracteres.", }, })} />
+          <input type="text" id="us_usuario" className={`input-field ${errors.us_usuario ? "input-error" : ""}`} {...register("us_usuario", { required: "Este campo es obligatorio.", maxLength: { value: 50, message: "El campo solo admite 50 caracteres.", }, })} />
           {errors.us_usuario && (
             <span className="error">{errors.us_usuario.message}</span>
           )}
@@ -109,7 +110,7 @@ export default function LoginForm() {
 
           <label htmlFor="us_contrasena">Contraseña:</label>
           <div className="relative">
-            <input type={showPassword ? "text" : "password"} id="us_contrasena" {...register("us_contrasena", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} />
+            <input type={showPassword ? "text" : "password"} id="us_contrasena" className={`input-field ${errors.us_contrasena ? "input-error" : ""}`} {...register("us_contrasena", { required: "Este campo es obligatorio.", maxLength: { value: 10, message: "El campo solo admite 10 caracteres.", }, })} />
             <span onClick={togglePasswordVisibility} className="toggle_password">
               {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
             </span>
