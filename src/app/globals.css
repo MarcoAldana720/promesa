@@ -86,8 +86,8 @@ body {
 }
 
 .container_center button:hover {
-  background-color: transparent;
-  color: var(--primary-color);
+  border: 2px rgba(6, 31, 87, 0.1) solid;
+  background-color: rgba(6, 31, 87, 0.8);
 }
 
 .relative {
