@@ -425,7 +425,7 @@ ol li p:nth-child(2) {
 
 .container_search input {
   width: 100%;
-  padding: 9.1px;
+  padding: 10px;
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
   border-radius: 4px;
@@ -591,7 +591,6 @@ ol li p:nth-child(2) {
 
 /*         STYLE THE DATE USER         */
 .custom_container {
-  
   font-weight: bold;
   color: var(--primary-color);
 }
@@ -943,7 +942,6 @@ ol li p:nth-child(2) {
   padding: 10px 9px;
   margin-top: 5px;
   margin-bottom: 5px;
-  
 }
 
 .form_left input:disabled, .form_right input:disabled {
@@ -959,7 +957,6 @@ ol li p:nth-child(2) {
   padding: 11px 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-  
 }
 
 .form_left select:disabled, .form_right select:disabled {
@@ -975,7 +972,6 @@ ol li p:nth-child(2) {
   padding: 11px 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-  
 }
 
 .type_production:disabled {
@@ -1056,7 +1052,7 @@ ol li p:nth-child(2) {
 
 /* ----------------------------------- */
 /*           STYLE THE MOVIL           */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   /* STYLE THE LOGIN */
   .container_center {
     font-size: 14px;
@@ -1092,6 +1088,10 @@ ol li p:nth-child(2) {
   }
 
   /*     STYLE THE BOTTON THE ADD      */
+  .container_add {
+    gap: 0;
+  }
+
   .container_btn {
     position: fixed;
     bottom: 15px;
