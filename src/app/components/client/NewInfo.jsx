@@ -101,7 +101,7 @@ export default function NewInfo({ show, data = null, isEdit = false }) {
             <label htmlFor="iden_entidad">Entidad de nacimiento *:
               <span className="tooltip-icon highlight-icon" data-tooltip="Estado de la República Mexicana donde nació."><HelpIcon /></span>
             </label><br />
-            <input type="text" name="iden_entidad" id="iden_entidad" className={`input-field ${errors.iden_entidad ? "input-error" : ""}`} {...register("iden_entidad", { required: "Este campo es obligatorio.", maxLength: { value: 50, message: "El campo solo admite 50 caracteres." } })} />
+            <input type="text" id="iden_entidad" className={`input-field ${errors.iden_entidad ? "input-error" : ""}`} {...register("iden_entidad", { required: "Este campo es obligatorio.", maxLength: { value: 50, message: "El campo solo admite 50 caracteres." } })} />
             {errors.iden_entidad && <span className="error">{errors.iden_entidad.message}</span>}
             <br />
 
@@ -117,7 +117,7 @@ export default function NewInfo({ show, data = null, isEdit = false }) {
             <br />
 
             <label htmlFor="iden_telefono">Celular:</label><br />
-            <input type="tel" className={`input-field ${errors.iden_telefono ? "input-error" : ""}`} {...register("iden_telefono", { maxLength: { value: 10, message: "El campo solo admite 10 dígitos.", }, })} />
+            <input type="tel" id="iden_telefono" className={`input-field ${errors.iden_telefono ? "input-error" : ""}`} {...register("iden_telefono", { maxLength: { value: 10, message: "El campo solo admite 10 dígitos.", }, })} />
             {errors.iden_telefono && <span className="error">{errors.iden_telefono.message}</span>}<br />
 
             <label htmlFor="iden_email">Correo electrónico *:</label>
